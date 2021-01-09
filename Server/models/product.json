@@ -1,0 +1,110 @@
+[
+    {
+        "brandName": "Santa Cruz",
+        "modelName": "Tallboy",
+        "price": 350000,
+        "id": 0,
+        "bestSale": true,
+        "discount": 0,
+        "img": "https://www.santacruzbicycles.com/files/frame/thumbs/my21_thumb_0004_my21_tallboy_cc_xx1_rsv_ivory.jpg"
+    },
+    {
+        "brandName": "Santa Cruz",
+        "modelName": "Hightower",
+        "price": 360500,
+        "id": 1,
+        "bestSale": false,
+        "discount": 20,
+        "img": "https://www.santacruzbicycles.com/files/styles/scb_natural_1440_auto/public/hero/my21_hero_ht_grey.jpg?itok=MSzycBUv"
+    },
+    {
+        "brandName": "Santa Cruz",
+        "modelName": "V10",
+        "price": 398700,
+        "id": 2,
+        "bestSale": true,
+        "discount": 0,
+        "img": "https://cdn.shoplightspeed.com/shops/628597/files/16032402/image.jpg"
+    },
+    {
+        "brandName": "Santa Cruz",
+        "modelName": "5010",
+        "price": 230200,
+        "id": 3,
+        "bestSale": true,
+        "discount": 30,
+        "img": "https://cdn.webshopapp.com/shops/212063/files/328851864/santa-cruz-5010-4-c-xt.jpg"
+    },
+    {
+        "brandName": "Specialized",
+        "modelName": "Stumpjumper Evo",
+        "price": 23000,
+        "id": 4,
+        "bestSale": false,
+        "discount": 10,
+        "img": "https://s7d5.scene7.com/is/image/Specialized/97519-51_SJ-FSR_COMP-ALLOY-EVO-29_BRSH-BLK_HERO"
+    },
+    {
+        "brandName": "Specialized",
+        "modelName": "Enduro",
+        "price": 370000,
+        "id": 5,
+        "bestSale": false,
+        "discount": 0,
+        "img": "https://twentysix.ru/uploads/images/00/22/72/2019/08/16/bbb067.jpg"
+    },
+    {
+        "brandName": "Specialized",
+        "modelName": "Epic Pro",
+        "price": 100000,
+        "id": 6,
+        "bestSale": true,
+        "discount": 0,
+        "img": "https://proextreem.com.ua/content/images/27/21048029215172.jpeg"
+    },
+    {
+        "brandName": "Specialized",
+        "modelName": "Diverge",
+        "price": 350100,
+        "id": 7,
+        "bestSale": false,
+        "discount": 0,
+        "img": "https://cdn.shopify.com/s/files/1/0089/4972/7298/products/unnamed_07371ec0-0496-4f73-9326-6dd1209bdf35_1000x700.jpg?v=1588903270"
+    },
+    {
+        "brandName": "Yeti",
+        "modelName": "ARC",
+        "price": 120000,
+        "id": 8,
+        "bestSale": true,
+        "discount": 0,
+        "img": "https://images.prismic.io/yeticyclescom/7a6918d8-e435-45e8-a236-0c7d5c732a48_2021_YetiCycles_ARC_35th_Anniversary.jpg?auto=compress,format&rect=0,150,2880,1620&w=1440&h=810"
+    },
+    {
+        "brandName": "Yeti",
+        "modelName": "Sb140",
+        "price": 370000,
+        "id": 9,
+        "bestSale": true,
+        "discount": 20,
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoJEzTM-5uX4l7lNJwKOo3H38GP3ImZzrHnw&usqp=CAU"
+    },
+    {
+        "brandName": "Yeti",
+        "modelName": "Sb130",
+        "price": 400000,
+        "id": 10,
+        "bestSale": false,
+        "discount": 5,
+        "img": "https://www.sefiles.net/merchant/3303/images/zoom/sb130turq1.jpg"
+    },
+    {
+        "brandName": "Yeti",
+        "modelName": "SB150",
+        "price": 420000,
+        "id": 11,
+        "bestSale": false,
+        "discount": 10,
+        "img": "https://bikeandme.com.ua/i/11/78/82/7/1178827/gallery/579a4b1fa46fb7024e1ce20740357964-quality_75Xresize_1Xallow_enlarge_0Xw_700Xh_0.jpg"
+    }
+]
