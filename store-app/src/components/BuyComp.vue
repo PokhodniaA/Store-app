@@ -2,7 +2,7 @@
   <button
     class="buy animate__animated"
     :class="{
-      buy__active: this.bought || this.item.bought,
+      buy__active: this.bought,
       animate__bounce: this.bounce,
     }"
     @animationend="deleteBounce"
@@ -22,14 +22,14 @@ export default {
     return {
       items: this.$store.state.basket,
       data: this.$store.state.data,
-      bought: null,
+      bought: this.item.bought,
       bounce: false,
     };
   },
   computed: {},
   methods: {
     addToBasket() {
-      if (!this.item.bought) {
+      if (!this.bought) {
         this.item.bought = this.bought = true;
         this.items.push(this.item);
       } else {
@@ -40,16 +40,16 @@ export default {
       this.addBounce();
       this.sendBought();
     },
+    sendBought() {
+      if (this.reqToSend) {
+        this.$emit("sendBought", this.bought);
+      }
+    },
     addBounce() {
       this.bounce = true;
     },
     deleteBounce() {
       this.bounce = false;
-    },
-    sendBought() {
-      if (this.reqToSend) {
-        this.$emit("sendBought", this.bought);
-      }
     },
   },
 };
