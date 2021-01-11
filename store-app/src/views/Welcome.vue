@@ -8,7 +8,9 @@
 export default {
   computed: {
     getName() {
-      return this.$store.state.login;
+      const name = this.$store.state.login,
+        newName = name[0].toUpperCase() + name.slice(1);
+      return newName;
     },
   },
   mounted() {

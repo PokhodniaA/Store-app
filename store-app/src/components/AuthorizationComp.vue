@@ -6,13 +6,16 @@
       name="login"
       placeholder="Username"
       v-model="loginData.login"
+      @keydown.enter="signIn"
     />
     <input
       type="password"
       name="password"
       placeholder="Password"
       v-model="loginData.password"
+      @keydown.enter="signIn"
     />
+
     <button class="mainButton" @click="signIn">Войти</button>
 
     <div class="auth__registrationText">

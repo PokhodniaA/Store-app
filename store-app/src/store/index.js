@@ -10,7 +10,6 @@ export default new Vuex.Store({
   },
   mutations: {
     SIGNIN(state, { login, id }) {
-      console.log(login, id, 'signin');
       state.isAuth = true;
       state.login = login;
       state.id = id;

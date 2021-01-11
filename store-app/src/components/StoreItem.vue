@@ -7,7 +7,7 @@
     <section class="storeItem__subTitle">{{ item.modelName }}</section>
     <section class="storeItem__price">{{ price }}</section>
 
-    <additionalItems :bestSale="item.bestSale" :discount="item.discount" />
+    <additionalIcon :bestSale="item.bestSale" :discount="item.discount" />
     <buyComp class="storeItem__buy" :item="item"
       ><img src="@/assets/img/icons/shopping_bag-black-18dp.svg"
     /></buyComp>
@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import additionalItems from "./AdditionalIcon";
+import additionalIcon from "./AdditionalIcon";
 import buyComp from "./BuyComp.vue";
 import priceMixin from "@/mixins/price.js";
 
@@ -29,7 +29,7 @@ export default {
     },
   },
   components: {
-    additionalItems,
+    additionalIcon,
     buyComp,
   },
   mixins: [priceMixin],

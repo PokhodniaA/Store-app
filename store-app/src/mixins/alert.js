@@ -16,9 +16,9 @@ export default {
         },
         toShowAlert() {
             this.showAlert = true;
-            setTimeout(function () {
+            setTimeout(() => {
                 this.showAlert = false;
-            }.bind(this), 2500);
+            }, 2500);
         },
         addNewErrorText(string) {
             this.errorText = string;

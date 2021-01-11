@@ -1,54 +1,49 @@
 export default {
     methods: {
-        async authorizationUserRequest() {
+        async sendAjax(path, method, data) {
             try {
-                const user = await (
-                    await fetch("http://localhost:3003/auth", {
-                        method: "POST",
+                return await (
+                    await fetch(`http://localhost:3003${path}`, {
+                        method: method,
                         headers: {
                             "Content-Type": "application/json;charset=utf-8",
                         },
-                        body: JSON.stringify(this.userData),
+                        body: JSON.stringify(data),
                     })
                 ).json();
-
-                if (!user.error) {
-                    this.$store.commit("SIGNIN", user);
-                    this.showMainPage();
-                } else {
-                    this.newError(
-                        "Такого аккаунта не существует. Вы можете зарегестрироваться!"
-                    );
-                }
             } catch (e) {
                 this.newError("Упссссс..... Произошла ошибка.");
                 console.log(e);
             }
         },
-        async registrationUserRequest() {
-            try {
-                const user = await (
-                    await fetch("http://localhost:3003/registr", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json;charset=utf-8",
-                        },
-                        body: JSON.stringify(this.userData),
-                    })
-                ).json();
-
-                if (!user.error) {
-                    this.$store.commit("SIGNIN", user);
-                    this.showMainPage();
-                } else {
-                    this.newError("Такой пользователь существует!");
-                }
-            } catch (e) {
-                this.newError("Упссссс..... Произошла ошибка.");
-                console.log(e);
-            }
+        authorizationUserRequest() {
+            this.sendAjax('/auth', 'POST', this.userData)
+                .then(
+                    result => {
+                        if (!result.error) {
+                            this.showMainPage(result);
+                        } else {
+                            this.newError(
+                                "Такого аккаунта не существует. Вы можете зарегестрироваться!"
+                            );
+                        }
+                    }
+                )
         },
-        showMainPage() {
+        registrationUserRequest() {
+            this.sendAjax('/registr', 'POST', this.userData)
+                .then(
+                    result => {
+                        if (!result.error) {
+                            this.showMainPage(result);
+                        } else {
+                            this.newError("Такой пользователь существует!");
+                        }
+                    }
+                )
+        },
+        showMainPage(result) {
+            this.$store.commit("SIGNIN", result);
             this.$router.push("/");
         },
     }

@@ -68,7 +68,6 @@ export default {
     loginInStore(userData) {
       if (userData.login && userData.password) {
         this.userData = userData;
-        console.log(this.userData);
         this.authorizationUserRequest();
       } else {
         this.newError("Пожалуйста, заполните все поля!");

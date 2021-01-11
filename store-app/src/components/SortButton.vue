@@ -1,6 +1,6 @@
 <template>
   <div class="sort">
-    <button class="sort__button" @click="isSortItems">{{ ascendOrNot }}</button>
+    <button class="sort__button" @click="isSortItems">{{ sortText }}</button>
   </div>
 </template>
 
@@ -22,15 +22,10 @@ export default {
       } else {
         this.sortItems();
       }
-      console.log("isSort");
       this.$store.commit("setData", { key: "sort", data: this.sort });
     },
     sortItems() {
-      if (!this.sort.isAscend) {
-        this.ascendSort();
-      } else {
-        this.descendSort();
-      }
+      !this.sort.isAscend ? this.ascendSort() : this.descendSort();
     },
     descendSort() {
       this.sort.isAscend = false;
@@ -46,7 +41,7 @@ export default {
     },
   },
   computed: {
-    ascendOrNot() {
+    sortText() {
       return this.sort.isAscend
         ? "Сортировать по убыванию"
         : "Сортировать по возростанию";
