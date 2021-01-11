@@ -6,7 +6,7 @@
       animate__bounce: this.bounce,
     }"
     @animationend="deleteBounce"
-    @click.stop="addToBasket"
+    @click.stop="basketMove"
   >
     <slot></slot>
   </button>
@@ -21,24 +21,29 @@ export default {
   data() {
     return {
       items: this.$store.state.basket,
-      data: this.$store.state.data,
       bought: this.item.bought,
       bounce: false,
     };
   },
   computed: {},
   methods: {
-    addToBasket() {
+    basketMove() {
       if (!this.bought) {
-        this.item.bought = this.bought = true;
-        this.items.push(this.item);
+        this.addToBasket();
       } else {
-        const indexToDelete = this.items.indexOf(this.item); // оптимизировать покупку, костылей много
-        this.item.bought = this.bought = false;
-        this.items.splice(indexToDelete, 1);
+        this.removeFromBasket();
       }
       this.addBounce();
       this.sendBought();
+    },
+    addToBasket() {
+      this.item.bought = this.bought = true;
+      this.items.push(this.item);
+    },
+    removeFromBasket() {
+      const indexToDelete = this.items.indexOf(this.item); // оптимизировать покупку, костылей много.  Нужно придумать что сделать с индексом.
+      this.item.bought = this.bought = false;
+      this.items.splice(indexToDelete, 1);
     },
     sendBought() {
       if (this.reqToSend) {
