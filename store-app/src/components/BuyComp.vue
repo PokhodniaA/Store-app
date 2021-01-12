@@ -41,7 +41,7 @@ export default {
       this.items.push(this.item);
     },
     removeFromBasket() {
-      const indexToDelete = this.items.indexOf(this.item); // оптимизировать покупку, костылей много.  Нужно придумать что сделать с индексом.
+      const indexToDelete = this.items.indexOf(this.item);
       this.item.bought = this.bought = false;
       this.items.splice(indexToDelete, 1);
     },

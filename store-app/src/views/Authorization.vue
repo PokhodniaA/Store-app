@@ -74,7 +74,6 @@ export default {
       }
     },
     registrationUser() {
-      // доработать
       if (
         this.userData.login &&
         this.userData.password &&

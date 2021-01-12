@@ -106,7 +106,6 @@ export default {
   .product {
     &__container {
       flex-direction: column;
-      //   display: block;
     }
 
     &__img {
